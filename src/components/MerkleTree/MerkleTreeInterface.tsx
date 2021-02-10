@@ -2,7 +2,7 @@ import MerkleNode from "../MerkleNode/MerkleNode";
 import MerkleTree from "./MerkleTree";
 
 export interface MerkleTreeInterface {
-    createMerkleTree(data: String[]): MerkleTreeInterface;
+    createMerkleTree(data: String[]): MerkleTree;
 
     // Returns the Merkle root of the tree
     root(): MerkleNode;

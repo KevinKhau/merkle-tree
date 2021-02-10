@@ -1,6 +1,17 @@
 import React from 'react';
 
-class MerkleNode extends React.Component {
+type Props = {
+    data: string
+} | {
+    left: MerkleNode;
+    right: MerkleNode;
+};
+type State = {
+    left: MerkleNode;
+    right: MerkleNode;
+    hash: string;
+};
+class MerkleNode extends React.Component<Props, State> {
 
     hash(message: string) {
         // encode as UTF-8
