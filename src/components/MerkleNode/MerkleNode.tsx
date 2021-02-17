@@ -1,36 +1,48 @@
 import React from 'react';
 
 type Props = {
-    data: string
-} | {
-    left: MerkleNode;
-    right: MerkleNode;
+    data?: string;
+    hash?: string;
+    left?: MerkleNode;
+    right?: MerkleNode;
 };
 type State = {
-    left: MerkleNode;
-    right: MerkleNode;
+    left?: MerkleNode;
+    right?: MerkleNode;
     hash: string;
 };
 class MerkleNode extends React.Component<Props, State> {
 
+    constructor(props: Props) {
+        super(props);
+        if (props.hash) {
+            this.state = {hash: props.hash}
+        } else if (props.data) {
+            this.state = {hash: this.hash(props.data)}
+        } else if (props.left && props.right) {
+            this.state = {
+                left: props.left,
+                right: props.right,
+                hash: this.hash(this.concatenate(props.left.state.hash, props.right.state.hash))
+            }
+        }
+    }
+
+    concatenate(hash1: string, hash2: string): string {
+        return  hash1 + hash2;
+    }
+
     hash(message: string) {
-        // encode as UTF-8
-        const msgBuffer = new TextEncoder().encode(message);
+        const crypto = require('crypto');
 
         // hash the message
-        const dti = () => crypto.subtle.digest('SHA-256', msgBuffer);
-        const sp = require('synchronized-promise')
-        const syncDti = sp(dti)
+        const hash = crypto.createHash('sha256').update(message).digest('base64');
 
-        // convert ArrayBuffer to Array
-        const hashArray = Array.from(new Uint8Array(syncDti));
-
-        // convert bytes to hex string
-        return hashArray.map(b => ('00' + b.toString(16)).slice(-2)).join('');
+        return hash;
     }
 
     render() {
-        return <div></div>;
+        return <p>{this.state?.hash}</p>;
     }
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
-import MerkleTree from './MerkleTree';
+import {MerkleTree} from './MerkleTree';
 import MerkleNode from "../MerkleNode/MerkleNode";
 // @ts-ignore
 import enzyme, {shallow} from "enzyme";
@@ -40,7 +40,7 @@ beforeAll(async () => {
 describe('givenNiceMatch_whenCreateMerkleTree_then', async () => {
   test('it should have 4 leaves', () => expect(merkleTree.state.leaves.length).toEqual(4));
   test('it should have same leaves', () => expect(merkleTree.state.leaves).toEqual([node00, node01, node10, node11]));
-  test('it should have 7 nodes', () => expect(merkleTree.state.nodes).toEqual(7));
+  test('it should have 7 nodes', () => expect(merkleTree.state.nodes.length).toEqual(7));
   test('it should have same root', () => expect(merkleTree.state.root).toEqual(root));
   test('root hash should be equal', () => expect(merkleTree.state.root.state.hash).toEqual(root.state.hash));
 })

@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import MerkleTree from "./components/MerkleTree/MerkleTree";
+// @ts-ignore
+import OrganizationChart from '@dabeng/react-orgchart';
 
 function App() {
     const data = ['Sorare', 'Kevin', 'Blockchain', 'Football'];
@@ -10,22 +10,7 @@ function App() {
     return (
         <div className="App">
             <input type="text" value={data.join(separator)}/>
-            <header className="App-header">
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
-            <body>
-                <MerkleTree></MerkleTree>
-            </body>
+            <OrganizationChart datasource={data} draggable={true} />
         </div>
     );
 

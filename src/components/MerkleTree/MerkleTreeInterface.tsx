@@ -1,5 +1,5 @@
 import MerkleNode from "../MerkleNode/MerkleNode";
-import MerkleTree from "./MerkleTree";
+import {MerkleTree} from "./MerkleTree";
 
 export interface MerkleTreeInterface {
     createMerkleTree(data: String[]): MerkleTree;
