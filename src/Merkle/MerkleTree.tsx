@@ -6,6 +6,7 @@ export class MerkleTree implements MerkleTreeInterface {
     root!: MerkleNode;
     nodes: MerkleNode[] = [];
     leaves: MerkleNode[] = [];
+
     constructor(data: string[]) {
         this.createMerkleTree(data);
     }

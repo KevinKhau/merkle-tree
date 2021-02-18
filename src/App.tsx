@@ -17,11 +17,11 @@ class App extends React.Component<Props, State> {
     constructor(props: any) {
         super(props);
         const data = 'Sorare Kevin Blockchain Football';
-        const merkleTree = new MerkleTree(data.split(' '));
+        const merkleTree = new MerkleTree(this.format(data));
         this.state = {
             data,
             merkleTree,
-            datasource: merkleTreeToOrgChart(merkleTree)
+            datasource: this.merkleTreeToOrgChart(merkleTree)
         }
         this.handleClick = this.handleClick.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -44,24 +44,24 @@ class App extends React.Component<Props, State> {
 
     handleClick() {
         this.setState({
-            datasource: merkleTreeToOrgChart(new MerkleTree(this.state.data.split(' ')))
+            datasource: this.merkleTreeToOrgChart(new MerkleTree(this.format(this.state.data)))
         });
     }
 
-}
+    format = (str: string) => str.trim().split(/\s+/);
 
-function merkleTreeToOrgChart(merkleTree: MerkleTree) {
-    let merkleNodeToOrgChartNode1 = merkleNodeToOrgChartNode(merkleTree.root);
-    console.log(merkleNodeToOrgChartNode1);
-    return merkleNodeToOrgChartNode1;
-}
+    merkleTreeToOrgChart(merkleTree: MerkleTree) {
+        return this.merkleNodeToOrgChartNode(merkleTree.root);
+    }
 
-function merkleNodeToOrgChartNode(merkleNode: MerkleNode): any {
-    return {
-        name: merkleNode.hash,
-        title: merkleNode.data,
-        children: [merkleNode.left, merkleNode.right].filter(v => !!v).map(node => merkleNodeToOrgChartNode(node as MerkleNode))
-    };
+    merkleNodeToOrgChartNode(merkleNode: MerkleNode): any {
+        return {
+            name: merkleNode.hash,
+            title: merkleNode.data,
+            children: [merkleNode.left, merkleNode.right].filter(v => !!v).map(node => this.merkleNodeToOrgChartNode(node as MerkleNode))
+        };
+    }
+
 }
 
 export default App;
