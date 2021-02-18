@@ -20,6 +20,9 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
 }
+input[type="text"] {
+  width: 400px;
+}
 
 .App-link {
   color: #61dafb;
@@ -39,4 +42,17 @@
 }
 .orgchart ul li .oc-node .oc-heading .oc-symbol::before {
   all: unset;
+}
+
+.App .orgchart ul li .oc-node .oc-heading {
+  width: 200px;
+  height: 60px;
+  white-space: unset;
+  word-wrap: break-word;
+}
+.App .orgchart ul li .oc-node .oc-content {
+  width: 200px;
+  height: 60px;
+  white-space: unset;
+  word-wrap: break-word;
 }
