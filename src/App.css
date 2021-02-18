@@ -1,9 +1,5 @@
 .App {
   text-align: center;
-  background-color: #282c34;
-  color: white;
-  min-height: 100vh;
-
 }
 
 .App-logo {
@@ -36,4 +32,11 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.orgchart ul li .oc-node .oc-heading .oc-symbol::after {
+  all: unset;
+}
+.orgchart ul li .oc-node .oc-heading .oc-symbol::before {
+  all: unset;
 }

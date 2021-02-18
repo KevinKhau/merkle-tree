@@ -13,7 +13,8 @@ function App() {
     return (
         <div className="App">
             <input type="text" value={data.join(separator)}/>
-            <OrganizationChart datasource={merkleTreeToOrgChart(merkleTree)} draggable={true} />
+            <OrganizationChart datasource={merkleTreeToOrgChart(merkleTree)} parentNodeSymbol={'ez'}
+                               draggable={true} pan={true} zoom={true}/>
         </div>
     );
 
