@@ -1,11 +1,11 @@
-import MerkleNode from "../MerkleNode/MerkleNode";
+import MerkleNode from "./MerkleNode";
 import {MerkleTree} from "./MerkleTree";
 
 export interface MerkleTreeInterface {
     createMerkleTree(data: String[]): MerkleTree;
 
     // Returns the Merkle root of the tree
-    root(): MerkleNode;
+    root: MerkleNode;
 
     /**
      * Merkel root level is 0, thus in the given example height is 2.
@@ -14,6 +14,8 @@ export interface MerkleTreeInterface {
      */
     height(): number;
 
-    // Returns an Array containing the hashes of the given level
-    level(index: number): string;
+    /**
+     * Returns an Array containing the hashes of the given level
+     */
+    level(index: number): string[];
 }
