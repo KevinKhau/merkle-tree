@@ -4,7 +4,7 @@ type Props = {
     data?: string;
     left?: MerkleNode;
     right?: MerkleNode;
-    level?: number;
+    level: number;
 };
 
 class MerkleNode {
@@ -12,7 +12,7 @@ class MerkleNode {
     left?: MerkleNode;
     right?: MerkleNode;
     hash: string;
-    level?: number;
+    level = -1;
     /**
      * For demonstrative purpose. Storing data makes the hashing useless.
      */
@@ -29,7 +29,6 @@ class MerkleNode {
             this.data = this.concatenate(props.left.hash, props.right.hash)
             this.hash = this.applyHash(this.data);
         } else {
-            console.error({props});
             throw new Error("Expected Arguments: `data` or `left and right`");
         }
     }

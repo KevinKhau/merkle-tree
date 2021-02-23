@@ -40,7 +40,6 @@ export class MerkleTree implements MerkleTreeInterface {
         this.buildMerkleTree(parents, --level);
     }
 
-
     height(nbLeaves?: number): number {
         // Constant implementation using binary tree properties
         return Math.ceil(Math.log(nbLeaves ?? this.leaves.length) / Math.log(2));
