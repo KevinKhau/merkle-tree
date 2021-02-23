@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/merkle_tree/static/css/main.77f8374e.chunk.css",
+    "main.js": "/merkle_tree/static/js/main.9283aa18.chunk.js",
+    "main.js.map": "/merkle_tree/static/js/main.9283aa18.chunk.js.map",
+    "runtime-main.js": "/merkle_tree/static/js/runtime-main.03fbf2ed.js",
+    "runtime-main.js.map": "/merkle_tree/static/js/runtime-main.03fbf2ed.js.map",
+    "static/css/2.4c18019d.chunk.css": "/merkle_tree/static/css/2.4c18019d.chunk.css",
+    "static/js/2.9a0bc7fc.chunk.js": "/merkle_tree/static/js/2.9a0bc7fc.chunk.js",
+    "static/js/2.9a0bc7fc.chunk.js.map": "/merkle_tree/static/js/2.9a0bc7fc.chunk.js.map",
+    "static/js/3.2c71af94.chunk.js": "/merkle_tree/static/js/3.2c71af94.chunk.js",
+    "static/js/3.2c71af94.chunk.js.map": "/merkle_tree/static/js/3.2c71af94.chunk.js.map",
+    "index.html": "/merkle_tree/index.html",
+    "static/css/2.4c18019d.chunk.css.map": "/merkle_tree/static/css/2.4c18019d.chunk.css.map",
+    "static/css/main.77f8374e.chunk.css.map": "/merkle_tree/static/css/main.77f8374e.chunk.css.map",
+    "static/js/2.9a0bc7fc.chunk.js.LICENSE.txt": "/merkle_tree/static/js/2.9a0bc7fc.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.03fbf2ed.js",
+    "static/css/2.4c18019d.chunk.css",
+    "static/js/2.9a0bc7fc.chunk.js",
+    "static/css/main.77f8374e.chunk.css",
+    "static/js/main.9283aa18.chunk.js"
+  ]
+}
